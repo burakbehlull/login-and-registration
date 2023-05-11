@@ -1,0 +1,7 @@
+Python 3.11.3
+
+Modules:
+
+Django==4.1.7
+djangorestframework==3.14.0
+django-cors-headers==3.14.0
