@@ -1,2 +1,6 @@
 @import '../public/sass/base/reset';
 @import '../public/sass/Helpers/variables';
+
+body{
+    background-color: $bodyColor;
+}
