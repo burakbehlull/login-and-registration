@@ -1,11 +1,12 @@
 import React from 'react'
+import Home from './components/Home'
 import './main.scss'
 
 function App() {
 
   return (
     <>
-      <h1>BLOG WITH REACT + DJANGO</h1>
+      <Home />
     </>
   )
 }
