@@ -6,6 +6,13 @@ from rest_framework.response import Response
 
 from django.contrib.auth import authenticate
 
+@api_view(['GET'])
+def getData(request):
+    return ""
+    # items = Item.objects.all()
+    # datalar = ItemSerializer(items, many=True)
+    # return Response(datalar.data)
+
 class Login(APIView):
     def post(self, request):
         username = request.data.get('username')
