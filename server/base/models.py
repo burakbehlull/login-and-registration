@@ -1,7 +1,7 @@
 from django.db import models
 
-class User(models.Model):
-    username = models.CharField(max_length=30, unique=True)
-    email = models.EmailField(unique=True)
-    #password?
+# Create your models here.
+
+class Item(models.Model):
+    name = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)

@@ -1,13 +1,27 @@
-import React from 'react'
-import Home from './components/Home'
+import React,{useEffect, useState} from 'react'
+import Login from './components/Auth/Login'
+import axios from 'axios'
 import './main.scss'
 
-function App() {
 
+function App() {
+  const [data, setData] = useState([])
+  useEffect(()=>{
+    const getFunc = async () =>{
+      const getData = await axios.get('http://localhost:8000')
+      setData(getData.data)
+    }
+    getFunc()
+  })
+  
   return (
-    <>
-      <Home />
-    </>
+    <div className="App">
+      <h1>BLOG</h1>
+      {JSON.stringify(data)}
+
+      <Login />
+
+    </div>
   )
 }
 
