@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
 import axios from 'axios'
 import './main.scss'
 
@@ -13,13 +14,14 @@ function App() {
     }
     getFunc()
   })
-  
+
   return (
     <div className="App">
       <h1>BLOG</h1>
       {JSON.stringify(data)}
 
       <Login />
+      <Register />
 
     </div>
   )
