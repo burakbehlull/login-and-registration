@@ -1,4 +1,4 @@
-from base.models import Item
+from base.models import Item, Blog
 from .serializers import ItemSerializer, UserSerializer
 from django.shortcuts import redirect
 
@@ -9,6 +9,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
+
 
 @api_view(['GET'])
 def getData(request):
@@ -47,3 +48,13 @@ class RegisterView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserBlogsAPIView(APIView):
+    def get(self, request, format=None):
+        user = request.user
+        blogs = Blog.objects.filter(user=user)
+        serializer = BlogSerializer(blogs, many=True)
+        return Response(serializer.data)
+
+

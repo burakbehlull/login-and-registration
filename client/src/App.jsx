@@ -1,11 +1,13 @@
 import React,{useEffect, useState} from 'react'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
+import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import './main.scss'
 
 
 function App() {
+  const { username } = useParams();
   const [data, setData] = useState([])
   useEffect(()=>{
     const getFunc = async () =>{
@@ -22,6 +24,10 @@ function App() {
 
       <Login />
       <Register />
+
+      username: {username ? "var" : "yok"}
+
+
 
     </div>
   )
