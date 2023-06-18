@@ -3,7 +3,6 @@ import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
-import './main.scss'
 
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>BLOG</h1>
+      <h1>Login and Registration</h1>
       {JSON.stringify(data)}
 
       <Login />

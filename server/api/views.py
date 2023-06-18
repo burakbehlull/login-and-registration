@@ -50,11 +50,3 @@ class RegisterView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserBlogsAPIView(APIView):
-    def get(self, request, format=None):
-        user = request.user
-        blogs = Blog.objects.filter(user=user)
-        serializer = BlogSerializer(blogs, many=True)
-        return Response(serializer.data)
-
-
