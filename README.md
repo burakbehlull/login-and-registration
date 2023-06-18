@@ -1,6 +1,5 @@
-# Blog
+# Login and Registration
 
 Technologies:
 - Frontend: ReactJS
 - Backend: Django
-- Design tool: SCSS
